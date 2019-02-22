@@ -1,0 +1,27 @@
+plugins {
+	id 'java'
+	id 'eclipse'
+	id 'application'
+}
+
+application {
+	mainClassName = "game.TicTacToe"
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.3.2'
+	testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: '5.3.2'
+	testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.3.2'
+	testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.11.1'
+}
+
+test {
+	useJUnitPlatform()
+	testLogging {
+		events "passed", "skipped", "failed"
+	}
+}
